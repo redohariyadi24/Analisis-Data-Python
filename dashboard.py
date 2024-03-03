@@ -17,7 +17,7 @@ st.write(avg_season)
 
 # Membuat plot
 fig, ax = plt.subplots(figsize=(10, 5))
-ax.pie(avg_season, labels=labels_season, autopct='%1.1f%%', colors=('#9195F6', '#B7C9F2', '#F9F07A', '#FB88B4'))
+ax.pie(avg_season, labels=labels_season, autopct='%1.1f%%', colors=('#FFF67E', '#BFEA7C', '#9BCF53', '#416D19'))
 ax.set_title('Average Bike Sharing Based on Season')
 
 # Menampilkan plot di Streamlit
@@ -33,7 +33,7 @@ st.write(cnt_bikesharing)
 
 # Plot donut chart
 fig, ax = plt.subplots(figsize=(7, 5))
-ax.pie(cnt_bikesharing, labels=labels, autopct='%1.1f%%', colors=['#F9F07A', '#B7C9F2'], wedgeprops=dict(width=0.4))
+ax.pie(cnt_bikesharing, labels=labels, autopct='%1.1f%%', colors=['#BFEA7C', '#416D19'], wedgeprops=dict(width=0.4))
 
 # Lingkaran dalam untuk membuat tampilan donut chart
 centre_circle = plt.Circle((0,0),0.5,color='black', fc='white',linewidth=1.25)
@@ -59,7 +59,7 @@ st.write(avg_workingday)
 
 # Plot bar chart
 fig, ax = plt.subplots(figsize=(10, 5))  # Mengatur ukuran plot
-ax.bar(labels_workingday, avg_workingday, color=('#FB88B4', '#9195F6'))  # Membuat bar chart
+ax.bar(labels_workingday, avg_workingday, color=('#9BCF53', '#FFF67E'))  # Membuat bar chart
 ax.set_title("Average Bike Rentals on Working Days")  # Menambahkan judul
 ax.set_xlabel("Day Type")  # Menambahkan label pada sumbu x
 ax.set_ylabel("Average Count")  # Menambahkan label pada sumbu y
