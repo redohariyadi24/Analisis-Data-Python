@@ -59,7 +59,7 @@ st.write(avg_workingday)
 
 # Plot bar chart
 fig, ax = plt.subplots(figsize=(10, 5))  # Mengatur ukuran plot
-ax.bar(labels_workingday, avg_workingday, color=('lightblue', '#FFF67E'))  # Membuat bar chart
+ax.bar(labels_workingday, avg_workingday, color=('#BFEA7C', '#FFF67E'))  # Membuat bar chart
 ax.set_title("Average Bike Rentals on Working Days")  # Menambahkan judul
 ax.set_xlabel("Day Type")  # Menambahkan label pada sumbu x
 ax.set_ylabel("Average Count")  # Menambahkan label pada sumbu y
