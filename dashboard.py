@@ -17,7 +17,7 @@ st.write(avg_season)
 
 # Membuat plot
 fig, ax = plt.subplots(figsize=(10, 5))
-ax.pie(avg_season, labels=labels_season, autopct='%1.1f%%', colors=('#FFF67E', '#BFEA7C', '#9BCF53', '#416D19'))
+ax.pie(avg_season, labels=labels_season, autopct='%1.1f%%', colors=('#FFF67E', '#BFEA7C', 'green', '#416D19'))
 ax.set_title('Average Bike Sharing Based on Season')
 
 # Menampilkan plot di Streamlit
@@ -59,7 +59,7 @@ st.write(avg_workingday)
 
 # Plot bar chart
 fig, ax = plt.subplots(figsize=(10, 5))  # Mengatur ukuran plot
-ax.bar(labels_workingday, avg_workingday, color=('#9BCF53', '#FFF67E'))  # Membuat bar chart
+ax.bar(labels_workingday, avg_workingday, color=('green', '#FFF67E'))  # Membuat bar chart
 ax.set_title("Average Bike Rentals on Working Days")  # Menambahkan judul
 ax.set_xlabel("Day Type")  # Menambahkan label pada sumbu x
 ax.set_ylabel("Average Count")  # Menambahkan label pada sumbu y
