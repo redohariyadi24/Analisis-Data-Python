@@ -25,15 +25,21 @@ st.pyplot(fig)
 
 # Menampilkan Donut Chart Penyewa Sepeda
 # Data total jumlah pengguna terdaftar dan tidak terdaftar
-cnt_bikesharing = [day_df['registered'].sum(), day_df['casual'].sum()]
+# Menghitung total jumlah pengguna terdaftar (registered) dan tidak terdaftar (casual)
+registered_user = day_df["registered"].nunique()
+unregistered_user = day_df["casual"].nunique()
+
+# Data total jumlah pengguna terdaftar dan tidak terdaftar
+cnt_bikesharing = [registered_user, unregistered_user]
 labels = ['Registered', 'Unregistered']  # Label untuk potongan pie chart
 
-st.write("### Data Jumlah Penyewa Sepeda")
-st.write(cnt_bikesharing)
+st.write("### Jumlah Penyewa Sepeda")
+st.write("Registered User:", registered_user)
+st.write("Unregistered User:", unregistered_user)
 
 # Plot donut chart
 fig, ax = plt.subplots(figsize=(7, 5))
-ax.pie(cnt_bikesharing, labels=labels, autopct='%1.1f%%', colors=('#BFEA7C', '#416D19'), wedgeprops=dict(width=0.4))
+ax.pie(cnt_bikesharing, labels=labels, autopct='%1.1f%%', colors=['lightblue', '#BFEA7C'], wedgeprops=dict(width=0.4))
 
 # Lingkaran dalam untuk membuat tampilan donut chart
 centre_circle = plt.Circle((0,0),0.5,color='black', fc='white',linewidth=1.25)
