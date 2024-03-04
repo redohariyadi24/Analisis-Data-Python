@@ -23,38 +23,6 @@ ax.set_title('Average Bike Sharing Based on Season')
 # Menampilkan plot di Streamlit
 st.pyplot(fig)
 
-# Menampilkan Donut Chart Penyewa Sepeda
-# Data total jumlah pengguna terdaftar dan tidak terdaftar
-# Menghitung total jumlah pengguna terdaftar (registered) dan tidak terdaftar (casual)
-registered_user = day_df["registered"].nunique()
-unregistered_user = day_df["casual"].nunique()
-
-# Data total jumlah pengguna terdaftar dan tidak terdaftar
-cnt_bikesharing = [registered_user, unregistered_user]
-labels = ['Registered', 'Unregistered']  # Label untuk potongan pie chart
-
-st.write("### Jumlah Penyewa Sepeda")
-st.write("Registered User:", registered_user)
-st.write("Unregistered User:", unregistered_user)
-
-# Plot donut chart
-fig, ax = plt.subplots(figsize=(7, 5))
-ax.pie(cnt_bikesharing, labels=labels, autopct='%1.1f%%', colors=['lightblue', '#BFEA7C'], wedgeprops=dict(width=0.4))
-
-# Lingkaran dalam untuk membuat tampilan donut chart
-centre_circle = plt.Circle((0,0),0.5,color='black', fc='white',linewidth=1.25)
-fig.gca().add_artist(centre_circle)  # Menambahkan lingkaran dalam ke dalam plot
-
-# Judul plot
-plt.title('Bicycle Rentals User Percentage (Registered and Unregistered)')
-
-# Tambahkan label jumlah total pengguna
-total_users = sum(cnt_bikesharing)
-plt.annotate('Total Users: {}'.format(total_users), xy=(0, 0), fontsize=10, ha='center')
-
-# Menampilkan plot di Streamlit
-st.pyplot(fig)
-
 # Menampilkan Bar Chart Rata rata penggunaan sepeda pada hari kerja
 # Data rata-rata jumlah sewa sepeda berdasarkan jenis hari (hari libur atau hari kerja)
 avg_workingday = day_df.groupby('workingday')['cnt'].mean()
